@@ -100,7 +100,7 @@ const About = () => {
             </a>
           </Link>
         ) : (
-          <H1>loading</H1>
+          <H3>loading</H3>
         )}
       </Container>
     </Layout>

@@ -64,7 +64,7 @@ export default function ProductShape({ product, locale }) {
   // Every time we create a Product, a default variant is created of that product
   // that's why we will always have at least 1 variant.
   const hasVariants = variants.length > 1;
-
+  console.log(product);
   return (
     <>
       <Inner>

@@ -9,16 +9,20 @@ const STATES = {
 };
 
 const Inner = styled.span`
-  flex: 1 1 auto;
-  font-size: 16px;
-  background: var(--color-primary-action);
-  color: var(--color-primary-action-content);
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  padding: 16px 25px;
+  background: #5a393e;
   position: relative;
-  border-radius: 4px;
+  left: 25px;
+  width: 200px;
+  height: 50px;
+  color: #f8f7f2;
+  border-radius: 10px;
+  font-family: 'Dream Avenue', serif;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Outer = styled.button.attrs((p) => ({
@@ -32,6 +36,7 @@ const Outer = styled.button.attrs((p) => ({
   appearance: none;
   cursor: pointer;
   text-decoration: none;
+
   &:hover ${Inner} {
     background: var(--color-text-main);
     color: var(--color-main-background);

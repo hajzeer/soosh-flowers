@@ -80,6 +80,8 @@ export const Description = styled.div`
 export const DescriptionWrapper = styled.div`
   p,
   li {
+    font-weight: 600;
+    color: var(--color-text-sub);
     margin-left: 25px !important;
     margin-right: 25px;
     ${responsive.mdPlus} {
@@ -91,11 +93,13 @@ export const DescriptionWrapper = styled.div`
 
   h2 {
     font-size: var(--font-size-md);
+    color: var(--color-text-sub);
   }
 
   h3 {
     margin-left: 25px;
     line-height: 38px;
+    color: var(--color-text-sub);
     ${responsive.mdPlus} {
       margin-left: 50px;
     }
@@ -143,6 +147,7 @@ export const ImgContainer = styled.div`
 export const Title = styled(H1)`
   font-size: var(--font-size-xl);
   font-weight: 900;
+  text-transform: capitalize;
 `;
 
 export const Summary = styled.div`
