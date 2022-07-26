@@ -9,17 +9,16 @@ const Outer = styled.button.attrs(() => ({
   /* appearance: none; */
   display: none;
   cursor: pointer;
-  background: #F8F7F2;
+  background: #f8f7f2;
   border-radius: 100%;
   width: 50px;
   height: 50px;
   position: fixed;
   /* margin-right: 15px; */
   margin-top: 0px;
-  margin-left: -70px;
+  margin-left: 20px;
   /* left: 20px; */
   z-index: 100;
-  
 
   ${responsive.smAndLess} {
     display: flex;
@@ -28,8 +27,8 @@ const Outer = styled.button.attrs(() => ({
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 20px;
-    bottom: 40px;
+    left: 10px;
+    bottom: 20px;
   }
 `;
 
@@ -40,11 +39,12 @@ const Lines = styled.div`
   height: 3px;
   top: 50%;
   margin-top: -2px;
-  border-radius: 2px;
+  border-radius: 25px;
   transition: all 0.2s ease-out;
 
   &:before,
   &:after {
+    border-radius: 25px;
     width: 100%;
     top: -14px;
     background: var(--color-text-main);
@@ -61,7 +61,7 @@ const Lines = styled.div`
     top: ${(p) => (p.open ? '0' : '10px')};
 
     ${responsive.smAndLess} {
-      left: ${(p) => (p.open ? '0px' : '8px')};
+      left: ${(p) => (p.open ? '0px' : '0px')};
     }
   }
   &:before {
