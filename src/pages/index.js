@@ -132,7 +132,7 @@ const Home = () => {
           {isLoading ? (
             isData.children.map((product) => {
               return (
-                <Link href={product.path} passHref>
+                <Link href={product.path} passHref key={product.id}>
                   <a>
                     <ProductItem items={product} />
                   </a>

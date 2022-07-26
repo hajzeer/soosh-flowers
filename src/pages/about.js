@@ -91,7 +91,7 @@ const About = () => {
               <ImageGridCollection>
                 {isData.images.map((image) => {
                   return (
-                    <ImageGridCollectionInner>
+                    <ImageGridCollectionInner key={image.url}>
                       <Img src={image.url} layout="fill" primary />
                     </ImageGridCollectionInner>
                   );
