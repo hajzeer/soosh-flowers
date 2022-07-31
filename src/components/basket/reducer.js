@@ -102,7 +102,6 @@ export default produce(function reducer(draft, { action, ...rest }) {
       }
 
       const itemIndex = draft.clientBasket.cart.findIndex((i) => i.sku === sku);
-
       if (itemIndex !== -1) {
         if (action === 'remove-item') {
           draft.clientBasket.cart.splice(itemIndex, 1);
@@ -110,7 +109,11 @@ export default produce(function reducer(draft, { action, ...rest }) {
           const item = draft.clientBasket.cart[itemIndex];
 
           if (action === 'decrement-item') {
-            item.quantity -= 1;
+            if (!item.quantity === 0) {
+              item.quantity -= 1;
+            } else {
+              draft.clientBasket.cart.splice(itemIndex, 1);
+            }
           } else {
             item.quantity += 1;
           }

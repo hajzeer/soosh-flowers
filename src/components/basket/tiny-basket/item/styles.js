@@ -28,15 +28,14 @@ export const Row = styled.div`
 export const ItemDelete = styled.button`
   position: absolute;
   top: 2px;
-  right: 2px;
+  left: 2px;
   font-size: 0px;
-  display: none;
 
   &:before {
     content: '+';
     display: block;
     transform: rotate(45deg);
-    font-size: 12px;
+    font-size: 25px;
   }
 `;
 
