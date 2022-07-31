@@ -95,10 +95,12 @@ export const Article = styled.article`
   li {
     margin-left: 25px !important;
     margin-right: 25px;
+    font-weight: 600;
     ${responsive.mdPlus} {
       padding-right: 100px;
       margin-left: 50px !important;
       margin-right: 0;
+      font-weight: 600;
     }
   }
 

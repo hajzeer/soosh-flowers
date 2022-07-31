@@ -6,6 +6,7 @@ const Outer = styled.section`
 
 const Description = styled.div`
   max-width: var(--font-max-width);
+  font-weight: 600;
 `;
 
 const H1 = styled.h1`

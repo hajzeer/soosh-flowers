@@ -155,6 +155,7 @@ export const Summary = styled.div`
   font-size: var(--font-size-body);
   line-height: 1.4;
   margin-bottom: 15px;
+  font-weight: 600;
 `;
 
 export const RelatedContainer = styled(I)`

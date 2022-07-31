@@ -30,6 +30,7 @@ export const Body = styled.div`
 export const Text = styled.div`
   grid-area: content;
   margin-bottom: 100px;
+  font-weight: 600;
 `;
 export const Media = styled.div`
   grid-area: media;

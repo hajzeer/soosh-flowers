@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const ImageDiv = styled.div`
   width: 100%;
   height: auto;
-  padding: 20px;
+  padding: 0 30px 30px 30px;
   object-fit: contain;
 `;
 
@@ -20,7 +20,7 @@ export const ImagesStyled = styled(Image)`
 
 export const ImageStripe = styled.div`
   position: relative;
-  top: -22px;
+  top: -32px;
   width: 100%;
   height: 2px;
   background: #f8f7f2;
@@ -31,6 +31,7 @@ export const Paragraph = styled.p`
   padding: 0 15px;
   line-height: 2;
   z-index: 3;
+  font-weight: 600;
 `;
 
 export const SubParagraph = styled.p`
@@ -43,7 +44,7 @@ export const SubParagraph = styled.p`
 `;
 export const TitlePosition = styled.div`
   position: relative;
-  top: -60px;
+  top: -20px;
 `;
 export const H1 = styled.h1`
   font-size: 45px;

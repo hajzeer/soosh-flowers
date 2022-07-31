@@ -96,9 +96,8 @@ export default function TinyBasketItem({ item }) {
       <div>
         <ItemQuantityChanger>
           <button
-            onClick={decrement}
+            onClick={item.quantity == 0 ? remove : decrement}
             type="button"
-            disabled={item.quantity === 1}
           >
             -
           </button>
@@ -108,7 +107,7 @@ export default function TinyBasketItem({ item }) {
           </button>
         </ItemQuantityChanger>
       </div>
-      <ItemDelete onClick={remove}>{t('basket:removeItem', item)}</ItemDelete>
+      <ItemDelete onClick={remove}>x</ItemDelete>
     </Item>
   );
 }

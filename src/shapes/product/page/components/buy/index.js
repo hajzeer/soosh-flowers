@@ -42,7 +42,6 @@ export default function BuyButton({ product, selectedVariant, pricing }) {
     value: pricing?.defaultPrice?.price,
     currency: pricing?.defaultPrice?.currency
   });
-
   /**
    * Draw attention to the item when the server state has
    * been updated
@@ -56,7 +55,7 @@ export default function BuyButton({ product, selectedVariant, pricing }) {
 
       /**
        * Give the user time to rest their eyes after the
-       * right layou menu has been shown
+       * right layout menu has been shown
        */
       setTimeout(() => {
         basket.actions.drawAttention(selectedVariant.sku);
@@ -87,12 +86,7 @@ export default function BuyButton({ product, selectedVariant, pricing }) {
           <strong>{textDefaultPrice}</strong>
         </Price>
       )}
-      <Button
-        width="250px"
-        onClick={buy}
-        disabled={!pricing?.defaultPrice.currency}
-        state={buying && 'loading'}
-      >
+      <Button width="250px" onClick={buy} state={buying && 'loading'}>
         {t('product:addToBasket')}
       </Button>
     </ProductFooter>
