@@ -109,7 +109,7 @@ export default produce(function reducer(draft, { action, ...rest }) {
           const item = draft.clientBasket.cart[itemIndex];
 
           if (action === 'decrement-item') {
-            if (!item.quantity === 0) {
+            if (item.quantity !== 1) {
               item.quantity -= 1;
             } else {
               draft.clientBasket.cart.splice(itemIndex, 1);
