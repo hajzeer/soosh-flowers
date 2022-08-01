@@ -37,7 +37,6 @@ export default function BuyButton({ product, selectedVariant, pricing }) {
         : pricing?.defaultPrice.identifier || locale.crystallizePriceVariant
     });
   }
-
   const textDefaultPrice = t('price', {
     value: pricing?.defaultPrice?.price,
     currency: pricing?.defaultPrice?.currency

@@ -33,14 +33,21 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
       }
 
       const { customer } = checkoutModel;
-
       const { error, paymentIntent } = await stripe.confirmCardPayment(
         stripeClientSecret,
         {
           payment_method: {
             card: elements.getElement(CardElement),
             billing_details: {
-              name: `${customer.firstName} ${customer.lastName}`
+              name: `${customer.firstName} ${customer.lastName}`,
+              phone: `${customer.addresses[0].phone}`,
+              address: {
+                city: `${customer.addresses[0].city}`,
+                country: `${customer.addresses[0].country}`,
+                line1: `${customer.addresses[0].street}`,
+                line2: `${customer.addresses[0].street2}`,
+                postal_code: `${customer.addresses[0].postalCode}`
+              }
             }
           }
         }

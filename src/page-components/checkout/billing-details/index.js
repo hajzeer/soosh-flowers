@@ -25,8 +25,10 @@ const Inner = styled.div`
 
 const BillingDetails = ({ order }) => {
   const { t } = useTranslation('customer');
-  const { email } = order.customer.addresses?.[0] || {};
+  const { email, street, street2, country, postalCode, city, phone } =
+    order.customer.addresses?.[0] || {};
 
+  console.log(order.customer.addresses[0]);
   return (
     <Outer>
       <Inner>
@@ -39,6 +41,25 @@ const BillingDetails = ({ order }) => {
         </p>
         <p>
           {t('email')}: <strong>{email}</strong>
+        </p>
+        <p>
+          {t('phone number')}: <strong>{phone}</strong>
+        </p>
+        <p>{t('address')}: </p>
+        <p>
+          {t('street')}:{' '}
+          <strong>
+            {street}, {street2}
+          </strong>
+        </p>
+        <p>
+          {t('city and postal code')}:{' '}
+          <strong>
+            {city}, {postalCode}
+          </strong>
+        </p>
+        <p>
+          {t('country')}: <strong>{country}</strong>
         </p>
       </Inner>
     </Outer>

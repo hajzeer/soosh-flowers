@@ -33,8 +33,9 @@ export const InputGroup = styled.div`
 
 export const Input = styled.input`
   background: var(--color-main-background);
-  border-bottom: 1px solid var(--color-box-background);
   border: none;
+  border-bottom: 1px solid var(--color-text-sub);
+
   color: var(--color-text-sub);
   font-size: 1rem;
   font-weight: 500;
@@ -50,7 +51,7 @@ export const Input = styled.input`
   }
 
   &:valid {
-    border-bottom: 1px solid #b7e2e4;
+    border-bottom: 1px solid var(--color-text-sub);
   }
 
   &:invalid {
@@ -58,7 +59,7 @@ export const Input = styled.input`
   }
 
   &[value=''] {
-    border-bottom: 1px solid var(--color-box-background);
+    border-bottom: 1px solid var(--color-text-sub);
   }
 `;
 

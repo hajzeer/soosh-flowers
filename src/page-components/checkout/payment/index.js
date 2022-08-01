@@ -10,6 +10,7 @@ import ServiceApi from 'lib/service-api';
 import { useTranslation } from 'next-i18next';
 import { useBasket } from 'components/basket';
 import { Spinner } from 'ui/spinner';
+import countries from 'i18n-iso-countries';
 
 import {
   Input,
@@ -25,10 +26,6 @@ import {
 import Voucher from '../voucher';
 
 const StripeCheckout = dynamic(() => import('./stripe'));
-const KlarnaCheckout = dynamic(() => import('./klarna'));
-const VippsCheckout = dynamic(() => import('./vipps'));
-const MollieCheckout = dynamic(() => import('./mollie'));
-const PaypalCheckout = dynamic(() => import('./paypal'));
 
 const Row = styled.div`
   display: flex;
@@ -45,27 +42,23 @@ export default function Payment() {
   const [state, setState] = useState({
     firstName: '',
     lastName: '',
-    email: ''
+    email: '',
+    address_city: '',
+    address_country: '',
+    address_zip: '',
+    address_line1: '',
+    address_line2: '',
+    phone: '',
+    dialingCode: ''
   });
-
+  countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+  countries.registerLocale(require('i18n-iso-countries/langs/pl.json'));
   const paymentConfig = useQuery('paymentConfig', () =>
     ServiceApi({
       query: `
       {
         paymentProviders {
           stripe {
-            enabled
-          }
-          klarna {
-            enabled
-          }
-          mollie {
-            enabled
-          }
-          vipps {
-            enabled
-          }
-          paypal {
             enabled
           }
         }
@@ -79,18 +72,27 @@ export default function Payment() {
   if (window.location.pathname.startsWith(`/${router.locale}/`)) {
     multilingualUrlPrefix = '/' + router.locale;
   }
-
-  const { firstName, lastName, email } = state;
-
+  const {
+    firstName,
+    lastName,
+    email,
+    address_city,
+    address_country,
+    address_zip,
+    address_line1,
+    address_line2,
+    phone,
+    dialingCode
+  } = state;
   function getURL(path) {
     return `${location.protocol}//${location.host}${multilingualUrlPrefix}${path}`;
   }
-
   /**
    * The checkout model shared between all the payment providers
    * It contains everything needed to make a purchase and complete
    * an order
    */
+
   const checkoutModel = {
     basketModel,
     customer: {
@@ -99,7 +101,26 @@ export default function Payment() {
       addresses: [
         {
           type: 'billing',
-          email: email || null
+          email: email || null,
+          firstName: firstName || null,
+          lastName: lastName || null,
+          street: address_line1 || null,
+          street2: address_line2 || null,
+          postalCode: address_zip || null,
+          city: address_city || null,
+          country: countries.getAlpha2Code(address_country, 'en') || null,
+          phone: dialingCode + phone || null
+        },
+        {
+          type: 'delivery',
+          firstName: firstName || null,
+          lastName: lastName || null,
+          street: address_line1 || null,
+          street2: address_line2 || null,
+          postalCode: address_zip || null,
+          city: address_city || null,
+          country: countries.getAlpha2Code(address_country, 'en') || null,
+          phone: dialingCode + phone || null
         }
       ]
     },
@@ -129,97 +150,16 @@ export default function Payment() {
           />
         </PaymentProvider>
       )
-    },
-    {
-      name: 'klarna',
-      color: '#F8AEC2',
-      logo: '/static/klarna-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <KlarnaCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            getURL={getURL}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'vipps',
-      color: '#fff',
-      logo: '/static/vipps-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <VippsCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(url) => {
-              if (url) window.location = url;
-            }}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'mollie',
-      color: '#fff',
-      logo: '/static/mollie-vector-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <MollieCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(url) => {
-              if (url) window.location = url;
-            }}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'paypal',
-      color: '#fff',
-      logo: '/static/paypal-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <PaypalCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(crystallizeOrderId) => {
-              router.push(
-                checkoutModel.confirmationURL.replace(
-                  '{crystallizeOrderId}',
-                  crystallizeOrderId
-                )
-              );
-              scrollTo(0, 0);
-            }}
-          ></PaypalCheckout>
-        </PaymentProvider>
-      )
     }
   ];
 
   const enabledPaymentProviders = [];
   if (!paymentConfig.loading && paymentConfig.data) {
     const { paymentProviders } = paymentConfig.data.data;
-    if (paymentProviders.klarna.enabled) {
-      enabledPaymentProviders.push('klarna');
-    }
-    if (paymentProviders.mollie.enabled) {
-      enabledPaymentProviders.push('mollie');
-    }
-    if (paymentProviders.vipps.enabled) {
-      enabledPaymentProviders.push('vipps');
-    }
     if (paymentProviders.stripe.enabled) {
       enabledPaymentProviders.push('stripe');
     }
-    if (paymentProviders.paypal.enabled) {
-      enabledPaymentProviders.push('paypal');
-    }
   }
-
   return (
     <Inner>
       <CheckoutFormGroup>
@@ -253,12 +193,107 @@ export default function Payment() {
           </Row>
           <Row>
             <InputGroup>
+              <Label htmlFor="address_zip">{t('customer:zip code')}</Label>
+              <Input
+                name="address_zip"
+                type="text"
+                value={address_zip}
+                onChange={(e) =>
+                  setState({ ...state, address_zip: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+            <InputGroup>
+              <Label htmlFor="address_city">{t('customer:city')}</Label>
+              <Input
+                name="address_city"
+                type="text"
+                value={address_city}
+                onChange={(e) =>
+                  setState({ ...state, address_city: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+          </Row>
+          <Row>
+            <InputGroup>
+              <Label htmlFor="address_country">{t('customer:country')}</Label>
+              <Input
+                name="address_country"
+                type="text"
+                value={address_country}
+                onChange={(e) =>
+                  setState({ ...state, address_country: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+          </Row>
+
+          <Row>
+            <InputGroup>
+              <Label htmlFor="address_line1">
+                {t('customer: address line 1')}
+              </Label>
+              <Input
+                name="address_line1"
+                type="text"
+                value={address_line1}
+                onChange={(e) =>
+                  setState({ ...state, address_line1: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+            <InputGroup>
+              <Label htmlFor="address_line2">
+                {t('customer: address line 2')}
+              </Label>
+              <Input
+                name="address_line2"
+                type="text"
+                value={address_line2}
+                onChange={(e) =>
+                  setState({ ...state, address_line2: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+          </Row>
+          <Row>
+            <InputGroup>
               <Label htmlFor="email">{t('customer:email')}</Label>
               <Input
                 name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setState({ ...state, email: e.target.value })}
+                required
+              />
+            </InputGroup>
+          </Row>
+          <Row>
+            <InputGroup>
+              <Label htmlFor="dialingCode">{t('customer:dialing code')}</Label>
+              <Input
+                name="dialingCode"
+                type="text"
+                value={dialingCode}
+                onChange={(e) =>
+                  setState({ ...state, dialingCode: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
+            <InputGroup>
+              <Label htmlFor="phone">{t('customer:phone')}</Label>
+              <Input
+                name="phone"
+                type="text"
+                value={phone}
+                onChange={(e) => setState({ ...state, phone: e.target.value })}
                 required
               />
             </InputGroup>

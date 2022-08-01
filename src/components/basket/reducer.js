@@ -144,9 +144,10 @@ export default produce(function reducer(draft, { action, ...rest }) {
        * tenant, furniture.
        */
       if (
-        process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER !== 'furniture' &&
+        process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER !==
+          'soosh-flowers' &&
         process.env.NEXT_PUBLIC_SERVICE_API_URL ===
-          'https://service-api-demo.superfast.shop/api/graphql'
+          'https://soosh-flowers-server.vercel.app/api/graphql'
       ) {
         draft.clientBasket.cart = draft.serverBasket.cart.map(
           ({ sku, path, quantity }) => ({
