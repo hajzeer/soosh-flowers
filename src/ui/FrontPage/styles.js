@@ -2,12 +2,8 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 export const Container = styled.div`
-  padding: 10px;
   overflow: hidden;
-
-  @media (min-width: 1024px) {
-    margin: 20px;
-  }
+  position: relative;
 `;
 
 export const ImageDiv = styled.div`
@@ -57,6 +53,7 @@ export const MainInfoDiv = styled.div`
   flex-direction: column;
 
   @media (min-width: 1024px) {
+    margin: 20px;
     height: 65vh;
     flex-direction: row;
     justify-content: space-evenly;
@@ -71,12 +68,14 @@ export const FirstDiv = styled.div`
 `;
 export const SecondDiv = styled.div`
   @media (min-width: 1024px) {
+    margin: 20px;
+
     width: 50%;
   }
 `;
 export const Paragraph = styled.p`
   font-size: 18px;
-  padding: 0 15px;
+  padding: 0 20px;
   line-height: 2;
   z-index: 3;
   font-weight: 600;
@@ -141,21 +140,27 @@ export const Btn = styled.button`
 export const FlowerImageDiv = styled.div`
   width: 450px;
   height: 450px;
-  position: absolute;
+  position: relative;
   left: 10%;
+  margin: 0;
 
   transform: rotate(-10deg);
 
   @media (min-width: 1024px) {
+    position: absolute;
+
     width: 1000px;
-    left: 40%;
-    top: 650px;
+    height: auto;
+
+    left: 45%;
+
+    top: 400px;
   }
 
   @media (min-width: 1600px) {
     width: 1000px;
-    top: 750px;
-    left: 55%;
+    top: 400px;
+    left: 60%;
   }
 `;
 export const BgImageDiv = styled.div`
