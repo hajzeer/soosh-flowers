@@ -5,6 +5,10 @@ export const Main = styled.main`
   padding: 100px 0 0 0;
   border-style: solid;
   border-color: var(--color-main-background);
+
+  @media (min-width: 1024px) {
+    padding: 200px 0 0 0;
+  }
 `;
 
 export const LoadingWrapper = styled.div`

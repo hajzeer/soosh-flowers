@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import { simplyFetchFromGraph } from '../lib/graph';
 import Link from 'next/link';
 import Layout from '../components/layout';
-import { H1, H3, Paragraph } from '../ui/FrontPage/styles';
+import { H1, Paragraph } from '../ui/FrontPage/styles';
 import {
   Container,
   ImageDivFirst,
   ImageGridCollection,
   ImageGridCollectionInner,
   Img,
-  TextDiv
+  MainTextInfo,
+  FirstDiv,
+  SecondDiv,
+  TextDiv,
+  H3
 } from '../ui/AboutStyles/styles';
 import Image from 'next/image';
 
@@ -56,9 +60,7 @@ const About = () => {
     <Layout>
       <Container>
         <H1>About</H1>
-        <ImageDivFirst>
-          <Img src="/static/about1.png" layout="fill" primary />
-        </ImageDivFirst>
+
         <TextDiv>
           <H3>INSPIRED BY PETALS</H3>
           <Paragraph>
@@ -73,18 +75,27 @@ const About = () => {
             natural look and form.
           </Paragraph>
         </TextDiv>
+        <ImageDivFirst>
+          <Img src="/static/about1.png" layout="fill" primary />
+        </ImageDivFirst>
         <H3>MEET AND GREET</H3>
-        <div>IMAGE</div>
-        <H3>Monika</H3>
-        <Paragraph>
-          a head and a heart of Sooshflowers, passionate rescue animal lover,
-          coffee lover, wine lover – occasional of course! (family will be
-          reading ☺ ) With a double eye (literally) to the details and fussy,
-          long searches for the special pieces I’m a fan of slowliving, love
-          good music and adore watching renovations of old houses! My favourites
-          petals: dahlia, ranunculus and peonies. Thank you for your trust in
-          Sooshflowers. Forever grateful x
-        </Paragraph>
+        <MainTextInfo>
+          <FirstDiv>
+            <div>IMAGE</div>
+          </FirstDiv>
+          <SecondDiv>
+            <H3>Monika</H3>
+            <Paragraph>
+              a head and a heart of Sooshflowers, passionate rescue animal
+              lover, coffee lover, wine lover – occasional of course! (family
+              will be reading ☺ ) With a double eye (literally) to the details
+              and fussy, long searches for the special pieces I’m a fan of
+              slowliving, love good music and adore watching renovations of old
+              houses! My favourites petals: dahlia, ranunculus and peonies.
+              Thank you for your trust in Sooshflowers. Forever grateful x
+            </Paragraph>
+          </SecondDiv>
+        </MainTextInfo>
         {isLoading ? (
           <Link href="/shop" passHref>
             <a>

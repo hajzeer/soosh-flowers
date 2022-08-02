@@ -3,6 +3,24 @@ import Image from 'next/image';
 
 export const Container = styled.div`
   overflow: hidden;
+  position: relative;
+
+  @media (min-width: 1024px) {
+    padding: 20px;
+  }
+`;
+
+export const H3 = styled.h3`
+  position: relative;
+  font-size: 30px;
+  line-height: 1.2;
+  padding: 20px;
+  color: var(--color-text-sub);
+  max-width: var(--font-max-width);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  z-index: 3;
 `;
 
 export const Img = styled(Image)`
@@ -17,13 +35,58 @@ export const ImageDivFirst = styled.div`
   height: 300px;
   right: -50px;
   padding: 10px;
+
+  @media (min-width: 1024px) {
+    position: absolute;
+
+    height: 600px;
+    width: 750px;
+    top: 300px;
+    left: 60%;
+  }
+
+  @media (min-width: 1600px) {
+    position: absolute;
+    height: 700px;
+    width: 900px;
+    top: 300px;
+    left: 60%;
+  }
 `;
 
 export const TextDiv = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  top: -100px;
+
+  @media (min-width: 1024px) {
+    padding: 20px;
+    width: 70%;
+  }
+
+  @media (min-width: 1600px) {
+    height: 500px;
+  }
+`;
+
+export const MainTextInfo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1024px) {
+    position: relative;
+    flex-direction: row;
+  }
+`;
+export const FirstDiv = styled.div`
+  @media (min-width: 1024px) {
+    width: 45%;
+  }
+`;
+export const SecondDiv = styled.div`
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 export const ImageGridCollectionInner = styled.div`
@@ -41,34 +104,55 @@ export const ImageGridCollection = styled.div`
   grid-gap: 10px;
   cursor: pointer;
 
+  @media (min-width: 1024px) {
+    grid-gap: 30px;
+    padding: 0 50px;
+  }
+
   ${ImageGridCollectionInner}:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     height: 310px;
+    @media (min-width: 1024px) {
+      height: 835px;
+    }
   }
   ${ImageGridCollectionInner}:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     height: 150px;
+    @media (min-width: 1024px) {
+      height: 400px;
+    }
   }
   ${ImageGridCollectionInner}:nth-child(3) {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
-    height: 310px;
+    @media (min-width: 1024px) {
+      height: 835px;
+    }
   }
   ${ImageGridCollectionInner}:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: -1 / -2;
     height: 150px;
+    @media (min-width: 1024px) {
+      height: 400px;
+    }
   }
   ${ImageGridCollectionInner}:nth-child(5) {
     grid-column: 2 / 3;
     grid-row: -1 / -3;
-    height: 310px;
+    @media (min-width: 1024px) {
+      height: 835px;
+    }
   }
   ${ImageGridCollectionInner}:nth-child(6) {
     grid-column: 3 / 4;
     grid-row: -1 / -2;
     height: 150px;
+    @media (min-width: 1024px) {
+      height: 400px;
+    }
   }
 `;

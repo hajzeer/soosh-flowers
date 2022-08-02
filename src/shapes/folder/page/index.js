@@ -2,13 +2,21 @@ import React from 'react';
 
 import Grid, { GridItem } from 'components/grid';
 import Listformat from 'components/listformat';
-import { Outer, List, SubNavigation, Item, ImageStripe } from './styles';
+import {
+  Outer,
+  List,
+  SubNavigation,
+  Item,
+  ImageStripe,
+  FlowerImageDiv
+} from './styles';
 import Stackable from 'components/stackable';
 import PageHeader from 'components/page-header';
 import ShapeComponents from 'components/shape/components';
 import { FolderNotFound } from './components/folder-not-found';
 import { getData } from '../get-data';
 import { getFolderTitle } from '../utils';
+import Image from 'next/image';
 
 export { getData, getFolderTitle };
 
@@ -41,7 +49,14 @@ export default function FolderPage({ folder, hideHeader }) {
             title={getFolderTitle(folder)}
             description={description}
           />
-
+          <FlowerImageDiv>
+            <Image
+              src="/static/shop 1.png"
+              width={1000}
+              height={1000}
+              priority
+            />
+          </FlowerImageDiv>
           {hasSubfolders && (
             <>
               <ImageStripe />

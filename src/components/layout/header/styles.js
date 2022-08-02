@@ -7,7 +7,6 @@ export const Outer = styled.header`
   width: 100%;
   height: 100px;
   text-align: center;
-  max-width: var(--content-max-width);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -25,9 +24,10 @@ export const Outer = styled.header`
 `;
 
 export const BluredDiv = styled.div`
+  display: inline;
   width: 100%;
   height: 100px;
-  z-index: 99;
+  z-index: -1;
   background: rgba(var(--color-main-background), 0.6);
   backdrop-filter: blur(5px);
   position: absolute;
@@ -55,11 +55,53 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 99;
+`;
 
-  ${responsive.xs} {
+export const DesktopNavList = styled.div`
+  position: absolute;
+  padding: 20px;
+  top: 90px;
+  width: 100%;
+  z-index: 999;
+
+  ${responsive.smAndLess} {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    height: 2px;
+    background: #f8f7f2;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    height: 2px;
+    background: #f8f7f2;
   }
 `;
 
+export const BluredDivNav = styled.div`
+  display: inline;
+  width: 100%;
+  height: 70px;
+  z-index: -1;
+  background: rgba(var(--color-main-background), 0.6);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+`;
 export const Nav = styled.nav`
   display: none;
   margin: 6px 0 0 15px;
@@ -94,10 +136,14 @@ export const Nav = styled.nav`
 `;
 
 export const NavList = styled.ul`
-  display: inline-block;
   list-style: none;
+  width: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 999;
 
   /* Make space for logout button */
   ${responsive.smAndLess} {
@@ -107,16 +153,21 @@ export const NavList = styled.ul`
 
 export const NavListItem = styled.li`
   padding: 0;
+  width: 100%;
   display: inline-block;
   margin: 0 5px;
+  z-index: 999;
 
   > a {
+    font-family: 'Dream Avenue';
+    font-size: 20px;
     display: inline-block;
     text-transform: uppercase;
     padding: 10px 10px;
     transition: all 100ms;
     font-weight: 600;
     letter-spacing: 1px;
+    z-index: 999;
 
     &:hover {
       text-decoration: underline;

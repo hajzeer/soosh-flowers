@@ -89,6 +89,10 @@ const ContentTransformerOuter = styled.div`
       content: open-quote;
     }
   }
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
 `;
 
 export default function StyledContentTransformer({ json }) {

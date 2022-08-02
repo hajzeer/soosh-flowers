@@ -4,6 +4,10 @@ import Image from 'next/image';
 export const Container = styled.div`
   padding: 10px;
   overflow: hidden;
+
+  @media (min-width: 1024px) {
+    margin: 20px;
+  }
 `;
 
 export const ImageDiv = styled.div`
@@ -11,6 +15,16 @@ export const ImageDiv = styled.div`
   height: auto;
   padding: 0 30px 30px 30px;
   object-fit: contain;
+
+  @media (min-width: 1024px) {
+    width: 65%;
+    padding: 0 30px 30px 30px;
+    margin-left: 60px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 55%;
+  }
 `;
 
 export const ImagesStyled = styled(Image)`
@@ -24,8 +38,42 @@ export const ImageStripe = styled.div`
   width: 100%;
   height: 2px;
   background: #f8f7f2;
+
+  @media (min-width: 1024px) {
+    width: 65%;
+    margin-left: 60px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 55%;
+  }
 `;
 
+export const MainInfoDiv = styled.div`
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    height: 65vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+`;
+
+export const FirstDiv = styled.div`
+  @media (min-width: 1024px) {
+    width: 45%;
+  }
+`;
+export const SecondDiv = styled.div`
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+`;
 export const Paragraph = styled.p`
   font-size: 18px;
   padding: 0 15px;
@@ -64,7 +112,7 @@ export const H2 = styled.h2`
   text-transform: uppercase;
   font-weight: 500;
 `;
-export const H3 = styled.h2`
+export const H3 = styled.h3`
   position: relative;
   font-size: 30px;
   line-height: 1.2;
@@ -93,9 +141,22 @@ export const Btn = styled.button`
 export const FlowerImageDiv = styled.div`
   width: 450px;
   height: 450px;
-  position: relative;
+  position: absolute;
   left: 10%;
+
   transform: rotate(-10deg);
+
+  @media (min-width: 1024px) {
+    width: 1000px;
+    left: 40%;
+    top: 650px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 1000px;
+    top: 750px;
+    left: 55%;
+  }
 `;
 export const BgImageDiv = styled.div`
   position: relative;
@@ -105,10 +166,27 @@ export const BgImageDiv = styled.div`
   border-top: 2px solid #f8f7f2;
   z-index: 3;
   margin: 20px 0;
+
+  @media (min-width: 1024px) {
+    height: 600px;
+
+    padding: 60px 30px;
+  }
 `;
 
 export const HelperDiv = styled.div`
   &::before {
+  }
+`;
+
+export const TextDiv = styled.div`
+  @media (min-width: 1024px) {
+    width: 60%;
+    padding: 50px;
+    position: relative;
+    height: auto;
+    left: 0;
+    top: 50px;
   }
 `;
 
@@ -120,6 +198,10 @@ export const ItemsDiv = styled.div`
   overflow-y: hidden;
   overflow-x: auto;
   cursor: grab;
+
+  @media (min-width: 1024px) {
+    position: relative;
+  }
 `;
 
 export const SubBtn = styled.button`
@@ -133,6 +215,10 @@ export const SubBtn = styled.button`
   font-family: 'Dream Avenue', serif;
   font-size: 20px;
   z-index: 3;
+
+  @media (min-width: 1024px) {
+    font-size: 25px;
+  }
 `;
 
 export const SubInput = styled.input`
@@ -145,6 +231,10 @@ export const SubInput = styled.input`
   padding: 10px;
   z-index: 3;
   color: #5a393e;
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
 
 export const FormStyled = styled.form`

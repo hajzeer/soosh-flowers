@@ -18,7 +18,9 @@ import {
   PreviewBar,
   IconBar,
   ImageDiv,
-  BluredDiv
+  BluredDiv,
+  DesktopNavList,
+  BluredDivNav
 } from './styles';
 
 export default function Header({ simple, preview }) {
@@ -66,6 +68,21 @@ export default function Header({ simple, preview }) {
             </NavListItem>
           </NavList>
         </Nav>
+        <DesktopNavList>
+          <BluredDivNav />
+
+          <NavListItem>
+            <Link href="/">
+              <a>home</a>
+            </Link>
+            <Link href="/about">
+              <a>about</a>
+            </Link>
+            <Link href="/shop">
+              <a>shop</a>
+            </Link>
+          </NavListItem>
+        </DesktopNavList>
       </Outer>
     </>
   );

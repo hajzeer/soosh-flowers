@@ -6,9 +6,14 @@ import { responsive } from 'ui';
 export { default as GridItem } from './grid-item';
 
 const StyledGrid = styled(GridRenderer)`
-  grid-template-rows: ${(p) =>
-    `repeat(${p.model.rows?.length}, var(--grid-row-height))`};
+  grid-gap: 20px;
+  padding: 0 50px;
+  grid-template-rows: 1fr 1fr 1fr;
 
+  @media (min-width: 1600px) {
+    padding: 0 100px;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
   ${responsive.xs} {
     // We force the grid to have 1 column for small screens (display items vertically)
     // and overwrite the layout customized from the PIM dashboard.

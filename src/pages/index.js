@@ -22,7 +22,11 @@ import {
   H3,
   FormStyled,
   HelperDiv,
-  ItemsDiv
+  ItemsDiv,
+  MainInfoDiv,
+  FirstDiv,
+  SecondDiv,
+  TextDiv
 } from '../ui/FrontPage/styles.js';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -79,55 +83,61 @@ const Home = () => {
   return (
     <Layout>
       <Container>
-        <>
-          <ImageDiv>
-            <ImagesStyled
-              src="/static/changeHeroImage.jpg"
-              width={564}
-              height={846}
-              priority
-            />
-          </ImageDiv>
-          <ImageStripe />
-        </>
-        <TitlePosition>
-          <H1>PERFECTLY FORMED FLOWERS</H1>
-        </TitlePosition>
-        <Paragraph>
-          Timeless life of dried and preserved flowers, seed heads and grasses,
-          closed in glass dome jars. Handmade from our UK flower studio,
-          delivered internationally in eco-friendly gift ready packaging.
-        </Paragraph>
-        <Link href="/shop">
-          <Btn>Shop now</Btn>
-        </Link>
+        <MainInfoDiv>
+          <FirstDiv>
+            <ImageDiv>
+              <ImagesStyled
+                src="/static/changeHeroImage.jpg"
+                width={564}
+                height={846}
+                priority
+              />
+            </ImageDiv>
+            <ImageStripe />
+          </FirstDiv>
+          <SecondDiv>
+            <TitlePosition>
+              <H1>PERFECTLY FORMED FLOWERS</H1>
+            </TitlePosition>
+            <Paragraph>
+              Timeless life of dried and preserved flowers, seed heads and
+              grasses, closed in glass dome jars. Handmade from our UK flower
+              studio, delivered internationally in eco-friendly gift ready
+              packaging.
+            </Paragraph>
+            <Link href="/shop">
+              <Btn>Shop now</Btn>
+            </Link>
+          </SecondDiv>
+        </MainInfoDiv>
         <FlowerImageDiv>
           <Image
             src="/static/frontFlower.png"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
             priority
           />
         </FlowerImageDiv>
-        <H2>
-          BRING THE OUTSIDE IN. <br />
-          MAKE IT PERSONAL
-        </H2>
-        <Paragraph>
-          ~ READY TO DISPATCH (aka I’m running late!) – no time to think? Go for
-          this option! to be shipped within 2 working days, next working day
-          delivery - shows as AVAILABLE under specific size. Other sizes are
-          available under MADE TO ORDER - waiting time up to 8 working days,
-          next working day delivery. ~ CUSTOM ORDER (I’m too special for the
-          ordinary!) – special arrangements for a special person? up to 10
-          working days, next working day delivery.
-        </Paragraph>
-        <ImageStripe />
-        <Paragraph>
-          *ADD PERSONALIZATION - available only with the CUSTOM ORDER - up to 10
-          working days, next working day delivery
-        </Paragraph>
-
+        <TextDiv>
+          <H2>
+            BRING THE OUTSIDE IN. <br />
+            MAKE IT PERSONAL
+          </H2>
+          <Paragraph>
+            ~ READY TO DISPATCH (aka I’m running late!) – no time to think? Go
+            for this option! to be shipped within 2 working days, next working
+            day delivery - shows as AVAILABLE under specific size. Other sizes
+            are available under MADE TO ORDER - waiting time up to 8 working
+            days, next working day delivery. ~ CUSTOM ORDER (I’m too special for
+            the ordinary!) – special arrangements for a special person? up to 10
+            working days, next working day delivery.
+          </Paragraph>
+          <ImageStripe />
+          <Paragraph>
+            *ADD PERSONALIZATION - available only with the CUSTOM ORDER - up to
+            10 working days, next working day delivery
+          </Paragraph>
+        </TextDiv>
         <ItemsDiv>
           {isLoading ? (
             isData.children.map((product) => {
