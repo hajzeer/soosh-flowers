@@ -114,20 +114,21 @@ export const Media = styled.div`
 
 // Creating a gallery based on image orientation
 export const ImgContainer = styled.div`
-  border: 4px solid #fff;
-  width: 50%;
-  max-width: 100%;
-  flex-grow: 1;
   position: relative;
+
+  @media (min-width: 1024px) {
+    left: 25%;
+  }
   figure {
     height: 100%;
   }
   img {
+    border: 4px solid #fff;
+
     object-fit: var(--image-object-fit);
     overflow: hidden;
-    width: 100%;
+    width: 50%;
     height: 100%;
-    border: 1px solid #dfdfdf;
   }
 
   ${is('portrait')`
