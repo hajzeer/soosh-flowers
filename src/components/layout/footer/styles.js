@@ -7,7 +7,6 @@ export const Outer = styled.footer`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  max-width: 1600px;
   margin: 50px 0;
   border-top: 2px solid var(--color-box-background);
   padding: 0px 10px 100px 10px;
