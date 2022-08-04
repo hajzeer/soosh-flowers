@@ -12,6 +12,12 @@ export const Text = styled.div`
     font-weight: 600;
     color: inherit;
   }
+
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 2em;
+    }
+  }
 `;
 
 export const Outer = styled.a`
@@ -24,7 +30,6 @@ export const Outer = styled.a`
   padding: 20px 20px;
   transition: all 0.1s ease-in-out;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-  border: 2px solid var(--color-text-main);
   border-top: none;
   border-bottom: none;
   cursor: pointer;

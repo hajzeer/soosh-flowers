@@ -105,7 +105,8 @@ export default createGlobalStyle`
     font: 14px/1 Helvetica, Arial, Verdana, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background: var(--color-main-background);
+    background: rgb(164,153,136);
+    background: linear-gradient(180deg, rgba(164,153,136,1) 28%, rgba(164,116,84,1) 57%, rgba(90,57,62,1) 100%);
     color: var(--color-text-sub);
   }
 

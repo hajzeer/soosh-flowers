@@ -10,6 +10,20 @@ export const Container = styled.div`
   }
 `;
 
+export const H1 = styled.h1`
+  font-size: 45px;
+  margin: 0 30px;
+  color: var(--color-text-main);
+  max-width: var(--font-max-width);
+  font-weight: 800;
+  letter-spacing: 5px;
+
+  @media (min-width: 1024px) {
+    font-size: 60px;
+    margin: 0 50px 40px;
+  }
+`;
+
 export const H3 = styled.h3`
   position: relative;
   font-size: 30px;
@@ -21,6 +35,23 @@ export const H3 = styled.h3`
   font-weight: 700;
   letter-spacing: 2px;
   z-index: 3;
+
+  @media (min-width: 1024px) {
+    padding: 0 40px;
+    margin: 20px 0;
+  }
+`;
+
+export const Paragraph = styled.p`
+  font-size: 18px;
+  padding: 0 20px;
+  line-height: 2;
+  z-index: 3;
+  font-weight: 600;
+
+  @media (min-width: 1024px) {
+    padding: 0 40px;
+  }
 `;
 
 export const Img = styled(Image)`

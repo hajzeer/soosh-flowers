@@ -36,7 +36,7 @@ export const ImageStripe = styled.div`
 
   @media (min-width: 1024px) {
     width: 50%;
-    left: 25%;
+    left: 0%;
   }
 `;
 
@@ -46,10 +46,17 @@ export const SubNavigation = styled.div`
   padding-bottom: 20px;
   width: 100%;
   justify-content: center;
+  align-items: center;
   ${responsive.xs} {
     flex-wrap: nowrap;
     overflow: scroll;
     position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    left: 5%;
+    justify-content: flex-start;
   }
 `;
 

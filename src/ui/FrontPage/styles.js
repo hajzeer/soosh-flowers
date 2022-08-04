@@ -36,12 +36,13 @@ export const ImageStripe = styled.div`
   background: #f8f7f2;
 
   @media (min-width: 1024px) {
-    width: 65%;
-    margin-left: 60px;
+    left: 0;
+    width: 100%;
+    margin: 50px 0;
   }
 
   @media (min-width: 1600px) {
-    width: 55%;
+    width: 100%;
   }
 `;
 
@@ -63,13 +64,16 @@ export const MainInfoDiv = styled.div`
 
 export const FirstDiv = styled.div`
   @media (min-width: 1024px) {
+    position: relative;
+    left: 100px;
     width: 45%;
   }
 `;
 export const SecondDiv = styled.div`
   @media (min-width: 1024px) {
+    position: relative;
+    left: -100px;
     margin: 20px;
-
     width: 50%;
   }
 `;
@@ -79,6 +83,10 @@ export const Paragraph = styled.p`
   line-height: 2;
   z-index: 3;
   font-weight: 600;
+
+  @media (min-width: 1024px) {
+    padding: 0 50px;
+  }
 `;
 
 export const SubParagraph = styled.p`
@@ -110,6 +118,10 @@ export const H2 = styled.h2`
   max-width: var(--font-max-width);
   text-transform: uppercase;
   font-weight: 500;
+
+  @media (min-width: 1024px) {
+    padding: 50px;
+  }
 `;
 export const H3 = styled.h3`
   position: relative;
@@ -187,7 +199,6 @@ export const HelperDiv = styled.div`
 export const TextDiv = styled.div`
   @media (min-width: 1024px) {
     width: 60%;
-    padding: 50px;
     position: relative;
     height: auto;
     left: 0;

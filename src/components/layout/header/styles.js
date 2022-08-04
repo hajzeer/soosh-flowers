@@ -91,7 +91,7 @@ export const DesktopNavList = styled.div`
 export const BluredDivNav = styled.div`
   display: inline;
   width: 100%;
-  height: 70px;
+  height: 65px;
   z-index: -1;
   background: rgba(var(--color-main-background), 0.6);
   backdrop-filter: blur(5px);

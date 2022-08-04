@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { simplyFetchFromGraph } from '../lib/graph';
 import Link from 'next/link';
 import Layout from '../components/layout';
-import { H1, Paragraph } from '../ui/FrontPage/styles';
 import {
   Container,
   ImageDivFirst,
@@ -13,7 +12,9 @@ import {
   FirstDiv,
   SecondDiv,
   TextDiv,
-  H3
+  H3,
+  H1,
+  Paragraph
 } from '../ui/AboutStyles/styles';
 import Image from 'next/image';
 

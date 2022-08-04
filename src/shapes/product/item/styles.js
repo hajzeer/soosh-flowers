@@ -46,18 +46,20 @@ export const Img = styled(Image)`
 
 export const Footer = styled.div`
   width: 100%;
-  padding: 5px 0;
+  height: 50px;
+  padding: 5px 10px;
   color: var(--color-text-main);
+  background: var(--color-text-sub);
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 
   h3 {
     display: block;
     padding: 0 0 5px;
-    font-size: var(--font-listing-name-size);
+    font-size: 20px;
     font-family: var(--font-family-main);
     color: inherit;
     margin: 0;

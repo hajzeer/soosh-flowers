@@ -93,7 +93,6 @@ const Home = () => {
                 priority
               />
             </ImageDiv>
-            <ImageStripe />
           </FirstDiv>
           <SecondDiv>
             <TitlePosition>
@@ -132,11 +131,11 @@ const Home = () => {
             the ordinary!) – special arrangements for a special person? up to 10
             working days, next working day delivery.
           </Paragraph>
-          <ImageStripe />
           <Paragraph>
             *ADD PERSONALIZATION - available only with the CUSTOM ORDER - up to
             10 working days, next working day delivery
           </Paragraph>
+          <ImageStripe />
         </TextDiv>
         <ItemsDiv>
           {isLoading ? (
@@ -156,7 +155,7 @@ const Home = () => {
         <BgImageDiv>
           <HelperDiv>
             <Image
-              src="/static/bgImage2.jpg"
+              src="/static/bg.png"
               layout="fill"
               objectFit="cover"
               quality={100}

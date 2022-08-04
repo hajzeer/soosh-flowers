@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const Outer = styled.footer`
   width: 100%;
   height: 150px;
+  padding: 0 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 50px 0;
-  border-top: 2px solid var(--color-box-background);
-  padding: 0px 10px 100px 10px;
+
+  @media (min-width: 1024px) {
+    padding: 0 200px;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -20,28 +22,6 @@ export const Anchor = styled.a`
   text-decoration: underline;
   font-family: 'Dream Avenue', serif;
   margin: 10px 0;
-`;
-
-export const Logo = styled.div`
-  width: 70px;
-`;
-
-export const Powered = styled.div`
-  width: 100%;
-  display: block;
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 600;
-
-  p {
-    margin: 0;
-    color: var(--color-text-sub);
-  }
-
-  svg {
-    width: 120px;
-  }
 `;
 
 export const HelperDiv = styled.div`
