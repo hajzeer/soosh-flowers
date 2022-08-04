@@ -83,6 +83,12 @@ export const ImageDivFirst = styled.div`
     top: 300px;
     left: 60%;
   }
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 export const TextDiv = styled.div`
@@ -123,6 +129,12 @@ export const SecondDiv = styled.div`
 export const ImageGridCollectionInner = styled.div`
   position: relative;
   width: 100%;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 export const ImageGridCollection = styled.div`
@@ -137,7 +149,7 @@ export const ImageGridCollection = styled.div`
 
   @media (min-width: 1024px) {
     grid-gap: 30px;
-    padding: 0 50px;
+    padding: 0 150px;
   }
 
   ${ImageGridCollectionInner}:nth-child(1) {

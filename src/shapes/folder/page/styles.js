@@ -14,6 +14,7 @@ export const Outer = styled(O)`
 `;
 
 export const List = styled.div`
+  padding: 20px;
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
@@ -87,5 +88,11 @@ export const FlowerImageDiv = styled.div`
     width: 800px;
     left: 60%;
     top: 100px;
+  }
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.03) rotate(-40deg);
   }
 `;

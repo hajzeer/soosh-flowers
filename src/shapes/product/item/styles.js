@@ -5,7 +5,12 @@ export const Outer = styled.a`
   height: 100%;
   color: var(--color-main-background);
   display: block;
-  transition: all 0.1s ease-in-out;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 export const Inner = styled.div`

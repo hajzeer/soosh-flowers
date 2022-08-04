@@ -21,6 +21,11 @@ export const ImageDiv = styled.div`
   @media (min-width: 1600px) {
     width: 55%;
   }
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 export const ImagesStyled = styled(Image)`
@@ -164,6 +169,12 @@ export const FlowerImageDiv = styled.div`
 
   transform: rotate(-10deg);
 
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.03) rotate(-10deg);
+  }
+
   @media (min-width: 1024px) {
     position: absolute;
 
@@ -197,10 +208,7 @@ export const BgImageDiv = styled.div`
   }
 `;
 
-export const HelperDiv = styled.div`
-  &::before {
-  }
-`;
+export const HelperDiv = styled.div``;
 
 export const TextDiv = styled.div`
   @media (min-width: 1024px) {

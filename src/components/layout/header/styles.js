@@ -46,6 +46,12 @@ export const ImageDiv = styled.div`
   align-items: center;
   z-index: 99;
   cursor: pointer;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 export const Logo = styled.div`
   width: 40px;
@@ -57,6 +63,12 @@ export const Logo = styled.div`
   align-items: center;
   z-index: 99;
   cursor: pointer;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 export const DesktopNavList = styled.div`
@@ -169,9 +181,10 @@ export const NavListItem = styled.li`
     font-weight: 600;
     letter-spacing: 1px;
     z-index: 999;
-    transition: all 0.5s;
+    transition: all 0.3s ease-out;
 
     &:hover {
+      transform: scale(1.1);
       text-decoration: underline;
     }
   }
@@ -197,6 +210,12 @@ export const Btn = styled.button`
   justify-self: flex-end;
   margin-left: 10px;
   z-index: 99;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   &:hover,
   &:active {

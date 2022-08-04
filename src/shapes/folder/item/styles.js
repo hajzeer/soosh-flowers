@@ -28,8 +28,7 @@ export const Outer = styled.a`
   align-items: center;
   background: transparent;
   padding: 20px 20px;
-  transition: all 0.1s ease-in-out;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border-top: none;
   border-bottom: none;
   cursor: pointer;
@@ -40,5 +39,11 @@ export const Outer = styled.a`
   &:last-child {
     border-left: none;
     border-right: none;
+  }
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
