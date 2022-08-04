@@ -147,6 +147,12 @@ export const Btn = styled.button`
   border-radius: 10px;
   font-family: 'Dream Avenue', serif;
   font-size: 20px;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const FlowerImageDiv = styled.div`
@@ -208,7 +214,7 @@ export const TextDiv = styled.div`
 
 export const ItemsDiv = styled.div`
   width: 100%;
-  height: 350px;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   overflow-y: hidden;
@@ -231,6 +237,12 @@ export const SubBtn = styled.button`
   font-family: 'Dream Avenue', serif;
   font-size: 20px;
   z-index: 3;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (min-width: 1024px) {
     font-size: 25px;

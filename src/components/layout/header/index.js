@@ -46,9 +46,11 @@ export default function Header({ simple, preview }) {
             <Image src="/static/31.png" alt="" width={80} height={160} />
           </Logo>
         </Link>
-        <ImageDiv>
-          <Image src="/static/8.png" width={250} height={150} />
-        </ImageDiv>
+        <Link href="/" passHref>
+          <ImageDiv>
+            <Image src="/static/8.png" width={250} height={150} />
+          </ImageDiv>
+        </Link>
         <IconBar>
           <BasketButton />
         </IconBar>

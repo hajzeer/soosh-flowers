@@ -45,6 +45,7 @@ export const ImageDiv = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 99;
+  cursor: pointer;
 `;
 export const Logo = styled.div`
   width: 40px;
@@ -55,6 +56,7 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 99;
+  cursor: pointer;
 `;
 
 export const DesktopNavList = styled.div`
@@ -164,10 +166,10 @@ export const NavListItem = styled.li`
     display: inline-block;
     text-transform: uppercase;
     padding: 10px 10px;
-    transition: all 100ms;
     font-weight: 600;
     letter-spacing: 1px;
     z-index: 999;
+    transition: all 0.5s;
 
     &:hover {
       text-decoration: underline;

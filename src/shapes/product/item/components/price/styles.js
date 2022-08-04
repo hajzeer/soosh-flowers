@@ -7,7 +7,6 @@ export const Price = styled.span`
   font-weight: bold;
   display: flex;
   font-size: var(--font-listing-price-size);
-  padding-bottom: 5px;
   align-items: center;
 
   ${is('discounted')`
