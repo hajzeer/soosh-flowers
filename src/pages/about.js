@@ -14,9 +14,9 @@ import {
   TextDiv,
   H3,
   H1,
-  Paragraph
+  Paragraph,
+  ImagesStyled
 } from '../ui/AboutStyles/styles';
-import Image from 'next/image';
 
 const About = () => {
   const [isData, setData] = useState([]);
@@ -79,10 +79,15 @@ const About = () => {
         <ImageDivFirst>
           <Img src="/static/about1.png" layout="fill" primary />
         </ImageDivFirst>
-        <H3>MEET AND GREET</H3>
+        <H3 left>MEET AND GREET</H3>
         <MainTextInfo>
           <FirstDiv>
-            <div>IMAGE</div>
+            <ImagesStyled
+              src="/static/IMG_3982.jpg"
+              width={480 / 1.1}
+              height={640 / 1.1}
+              priority
+            />
           </FirstDiv>
           <SecondDiv>
             <H3>Monika</H3>

@@ -39,6 +39,7 @@ export const H3 = styled.h3`
   @media (min-width: 1024px) {
     padding: 0 40px;
     margin: 20px 0;
+    left: ${(p) => (p.left ? '10%' : null)};
   }
 `;
 
@@ -113,12 +114,39 @@ export const MainTextInfo = styled.div`
   @media (min-width: 1024px) {
     position: relative;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 `;
 export const FirstDiv = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0 30px 30px 30px;
+  object-fit: contain;
+  display: flex;
+
   @media (min-width: 1024px) {
     width: 45%;
+    padding: 0 30px 30px 30px;
+    margin-left: 60px;
+    position: relative;
+    left: 7%;
   }
+
+  @media (min-width: 1600px) {
+    left: 10%;
+    width: 40%;
+  }
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+export const ImagesStyled = styled(Image)`
+  border-radius: 250px 250px 0 0;
+  position: relative;
 `;
 export const SecondDiv = styled.div`
   @media (min-width: 1024px) {

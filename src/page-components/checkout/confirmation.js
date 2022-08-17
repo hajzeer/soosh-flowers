@@ -82,7 +82,12 @@ export default function Confirmation({ order }) {
   }));
   const email = order.customer.addresses?.[0]?.email;
   const { total } = order;
-
+  let deliveryCosts;
+  if (total.gross > 150) {
+    deliveryCosts = 0;
+  } else {
+    deliveryCosts = 5;
+  }
   return (
     <Layout title={t('checkout:confirmation.title')}>
       <Outer>
@@ -107,6 +112,7 @@ export default function Confirmation({ order }) {
                 currency: total.currency
               })}
             </TotalLine>
+            <TotalLine>DELIVERY COST: £{deliveryCosts}.00</TotalLine>
             <TotalLine>
               {t('tax', {
                 value: total.gross - total.net,

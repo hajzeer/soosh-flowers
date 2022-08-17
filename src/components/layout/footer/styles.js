@@ -22,6 +22,7 @@ export const Anchor = styled.a`
   text-decoration: underline;
   font-family: 'Dream Avenue', serif;
   margin: 10px 0;
+  cursor: pointer;
 `;
 
 export const HelperDiv = styled.div`

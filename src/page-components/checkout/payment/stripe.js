@@ -8,7 +8,7 @@ import {
   useStripe,
   useElements
 } from '@stripe/react-stripe-js';
-
+import { useBasket } from '../../../components/basket/index';
 import ServiceApi from 'lib/service-api';
 import { Button, Spinner } from 'ui';
 import { useTranslation } from 'next-i18next';

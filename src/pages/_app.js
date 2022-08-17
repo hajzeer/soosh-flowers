@@ -8,7 +8,6 @@ import { SettingsProvider } from 'components/settings-context';
 import { BasketProvider } from 'components/basket';
 import { simplyFetchFromGraph } from 'lib/graph';
 import { getLocaleFromContext, defaultLocale } from 'lib/app-config';
-
 import nextI18NextConfig from '../../next-i18next.config.js';
 
 const queryClient = new QueryClient();
@@ -36,7 +35,6 @@ function MyApp({ Component, pageProps, commonData }) {
 
   return (
     <>
-      
       <DefaultSeo {...SEOSettings} />
       <QueryClientProvider client={queryClient}>
         <SettingsProvider mainNavigation={mainNavigation}>

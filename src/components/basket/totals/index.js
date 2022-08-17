@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
 import { Spinner } from 'ui/spinner';
@@ -10,14 +10,17 @@ import { Outer, Rows, Row, RowValue, SpinnerWrap } from './styles';
 export default function Totals(props) {
   const { t } = useTranslation(['common', 'basket']);
   const { cart, total, status } = useBasket();
-
   if (cart.length === 0) {
     return null;
   }
-
   const { currency } = total;
   function printCurrencyAmount(value) {
     return t('price', { value, currency });
+  }
+  let deliveryCost = 5;
+
+  if (total.gross > 150) {
+    deliveryCost = 0;
   }
 
   const hasDiscount = total?.discount > 0;
@@ -52,6 +55,11 @@ export default function Totals(props) {
               parseInt((total.gross - total.net) * 100, 10) / 100
             )}
           </RowValue>
+        </Row>
+        <Row>
+          <span>Delivery costs:</span>
+
+          <RowValue hide={isLoading}>£{deliveryCost}.00</RowValue>
         </Row>
         <Row modifier="to-pay">
           <span>{t('basket:totalToPay')}:</span>
