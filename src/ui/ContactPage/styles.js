@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 70vh;
+  height: auto;
   overflow: hidden;
   position: relative;
   padding: 20px;
@@ -28,6 +28,7 @@ export const IFrame = styled.iframe`
   border-radius: 25px;
   border: 2px solid #fff;
   width: 100%;
+  margin: 50px 0 20px 0;
 
   @media (min-width: 1024px) {
     width: 150%;
@@ -37,7 +38,7 @@ export const IFrame = styled.iframe`
 `;
 
 export const Anchor = styled.a`
-  margin: 45px;
+  margin: 40px;
   font-size: 17px;
   font-weight: 900;
   cursor: pointer;
