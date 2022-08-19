@@ -1,7 +1,7 @@
 import Layout from '../components/layout';
 
 const ethicalPolicy = () => {
-  return <Layout>hello world</Layout>;
+  return <Layout>ethical policy</Layout>;
 };
 
 export default ethicalPolicy;

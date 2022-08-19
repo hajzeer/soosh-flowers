@@ -1,7 +1,7 @@
 import Layout from '../components/layout';
 
 const deliveryReturns = () => {
-  return <Layout>hello world</Layout>;
+  return <Layout>Delivery and returns</Layout>;
 };
 
 export default deliveryReturns;

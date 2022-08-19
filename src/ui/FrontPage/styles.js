@@ -54,7 +54,6 @@ export const ImageStripe = styled.div`
 export const MainInfoDiv = styled.div`
   width: 100%;
   height: auto;
-
   display: flex;
   flex-direction: column;
 
@@ -68,10 +67,11 @@ export const MainInfoDiv = styled.div`
 `;
 
 export const FirstDiv = styled.div`
+  margin-top: 20px;
   @media (min-width: 1024px) {
     position: relative;
     left: 100px;
-    width: 45%;
+    width: 44%;
   }
 `;
 export const SecondDiv = styled.div`

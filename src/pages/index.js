@@ -159,6 +159,7 @@ const Home = () => {
               layout="fill"
               objectFit="cover"
               quality={100}
+              priority
             />
           </HelperDiv>
           <H3>JOIN OUR MAILING LIST</H3>

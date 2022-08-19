@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Outer = styled.footer`
   width: 100%;
-  height: 150px;
+  height: 200px;
   padding: 0 20px;
   display: flex;
   flex-direction: row;
@@ -23,6 +23,14 @@ export const Anchor = styled.a`
   font-family: 'Dream Avenue', serif;
   margin: 10px 0;
   cursor: pointer;
+`;
+export const SocialMediaDiv = styled.div`
+  position: relative;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 export const HelperDiv = styled.div`

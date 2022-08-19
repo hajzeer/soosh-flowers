@@ -1,7 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Outer, Anchor, NavList, HelperDiv, Paragraph } from './styles';
+import {
+  Outer,
+  Anchor,
+  NavList,
+  HelperDiv,
+  Paragraph,
+  SocialMediaDiv
+} from './styles';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -20,6 +28,14 @@ export default function Footer() {
         <Link href="/contact" passHref>
           <Anchor>Contact</Anchor>
         </Link>
+        <SocialMediaDiv>
+          <Link href="https://www.facebook.com/sooshflowers">
+            <Image src="/static/facebook.png" width="50" height="50" />
+          </Link>
+          <Link href="https://www.instagram.com/sooshflowers/?igshid=YmMyMTA2M2Y%3D">
+            <Image src="/static/instagram.png" width="50" height="50" />
+          </Link>
+        </SocialMediaDiv>
       </NavList>
     </Outer>
   );
