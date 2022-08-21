@@ -58,7 +58,14 @@ const About = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      title="ABOUT | SOOSHFLOWERS | Handmade from our UK flowers"
+      description="  Timeless life of dried and preserved flowers, seed heads and
+              grasses, closed in glass dome jars. Handmade from our UK flower
+              studio, delivered internationally in eco-friendly gift ready
+              packaging."
+    >
+      >
       <Container>
         <H1>About</H1>
 
