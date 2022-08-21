@@ -65,7 +65,6 @@ const About = () => {
               studio, delivered internationally in eco-friendly gift ready
               packaging."
     >
-      >
       <Container>
         <H1>About</H1>
 
