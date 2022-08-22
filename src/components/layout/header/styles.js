@@ -124,6 +124,7 @@ export const Nav = styled.nav`
   height: 100vh;
   color: #000;
   font-size: 18px;
+
   font-family: var(--font-family-main);
   ${responsive.smAndLess} {
     border-radius:${(p) => (p.open ? '0' : '100%')};
@@ -142,7 +143,8 @@ export const Nav = styled.nav`
     overflow-x: auto;
     scroll-behavior: smooth;
     border: none;
-    background: #F8F7F2;
+    background: rgb(252,249,233);
+    background: linear-gradient(337deg, rgba(252,249,233,1) 37%, rgba(255,255,255,1) 53%);
     margin: 0;
     padding: 2em;
     font-size: 1.5rem;
@@ -196,6 +198,11 @@ export const NavListItem = styled.li`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    > a {
+      font-size: 40px;
+      letter-spacing: 3px;
+      margin: 15px 0;
+    }
   }
 `;
 export const Btn = styled.button`

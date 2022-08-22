@@ -26,6 +26,7 @@ export const Anchor = styled.a`
 `;
 export const SocialMediaDiv = styled.div`
   position: relative;
+
   left: 10px;
   display: flex;
   flex-direction: row;
@@ -53,7 +54,7 @@ export const NavList = styled.div`
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   margin: 0 0 0 auto;
 
