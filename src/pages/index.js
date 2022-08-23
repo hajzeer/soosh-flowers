@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getData } from 'page-components/folder';
 import { getLocaleFromContext } from 'lib/app-config';
@@ -36,6 +36,30 @@ import { simplyFetchFromGraph } from '../lib/graph';
 const Home = () => {
   const [isData, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const inputEl = useRef(null);
+  const [message, setMessage] = useState('');
+
+  const Subscribe = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch(`/api/subscribe`, {
+      body: JSON.stringify({
+        email: inputEl.current.value
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST'
+    });
+    const { error } = await res.json();
+
+    if (error) {
+      setMessage(error);
+    }
+
+    inputEl.current.value = '';
+    setMessage('Success! 🎉 You are now subscribed to the newsletter.');
+  };
 
   const fetchingData = async () => {
     const apiUrlBase = `https://api.crystallize.com/${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER}`;
@@ -79,7 +103,6 @@ const Home = () => {
   useEffect(() => {
     fetchingData();
   }, []);
-
   return (
     <Layout
       title="SOOSHFLOWERS | Handmade from our UK flowers"
@@ -173,10 +196,15 @@ const Home = () => {
             Be the first to know about new arrivals, sales, exclusive offers,
             and special events.
           </SubParagraph>
-          <FormStyled>
-            <SubInput type="email" name="email" placeholder={'email address'} />
+          <FormStyled onSubmit={Subscribe}>
+            <SubInput
+              type="email"
+              name="email"
+              ref={inputEl}
+              placeholder={'Your email for subscribe newsletter'}
+            />
             <br />
-            <SubBtn>join now</SubBtn>
+            <SubBtn type="submit">join now</SubBtn>
           </FormStyled>
         </BgImageDiv>
       </Container>
