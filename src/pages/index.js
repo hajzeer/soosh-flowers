@@ -36,29 +36,26 @@ import { simplyFetchFromGraph } from '../lib/graph';
 const Home = () => {
   const [isData, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const inputEl = useRef(null);
-  const [message, setMessage] = useState('');
+  const inputRef = useRef(null);
 
-  const Subscribe = async (e) => {
+  const subscribeUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`/api/subscribe`, {
+    // this is where your mailchimp request is made
+
+    const res = await fetch('/api/subscribeUser', {
       body: JSON.stringify({
-        email: inputEl.current.value
+        email: inputRef.current.value
       }),
+
       headers: {
         'Content-Type': 'application/json'
       },
+
       method: 'POST'
     });
-    const { error } = await res.json();
 
-    if (error) {
-      setMessage(error);
-    }
-
-    inputEl.current.value = '';
-    setMessage('Success! 🎉 You are now subscribed to the newsletter.');
+    inputRef.current.value = '';
   };
 
   const fetchingData = async () => {
@@ -196,11 +193,11 @@ const Home = () => {
             Be the first to know about new arrivals, sales, exclusive offers,
             and special events.
           </SubParagraph>
-          <FormStyled onSubmit={Subscribe}>
+          <FormStyled onSubmit={subscribeUser}>
             <SubInput
               type="email"
               name="email"
-              ref={inputEl}
+              ref={inputRef}
               placeholder={'Your email for subscribe newsletter'}
             />
             <br />
