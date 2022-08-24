@@ -1,4 +1,5 @@
 import Layout from '../components/layout';
+import { Container } from '../ui/RulesStyled/style';
 
 const ethicalPolicy = () => {
   return (
@@ -9,7 +10,7 @@ const ethicalPolicy = () => {
               studio, delivered internationally in eco-friendly gift ready
               packaging."
     >
-      Ethical Policy
+      <Container>Ethical Policy</Container>
     </Layout>
   );
 };

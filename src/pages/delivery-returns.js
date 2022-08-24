@@ -1,4 +1,5 @@
 import Layout from '../components/layout';
+import { Container } from '../ui/RulesStyled/style';
 
 const deliveryReturns = () => {
   return (
@@ -9,7 +10,7 @@ const deliveryReturns = () => {
               studio, delivered internationally in eco-friendly gift ready
               packaging."
     >
-      Delivery and returns
+      <Container>Delivery and returns</Container>
     </Layout>
   );
 };
