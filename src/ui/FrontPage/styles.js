@@ -13,13 +13,13 @@ export const ImageDiv = styled.div`
   object-fit: contain;
 
   @media (min-width: 1024px) {
-    width: 65%;
+    width: 55%;
+
     padding: 0 30px 30px 30px;
     margin-left: 60px;
   }
 
   @media (min-width: 1600px) {
-    width: 55%;
   }
   transition: all 0.3s ease-out;
 

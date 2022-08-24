@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const Outer = styled.footer`
   width: 100%;
@@ -26,7 +27,7 @@ export const Anchor = styled.a`
 `;
 export const SocialMediaDiv = styled.div`
   position: relative;
-
+  cursor: pointer;
   left: 10px;
   display: flex;
   flex-direction: row;
