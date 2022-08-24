@@ -33,7 +33,7 @@ const Outer = styled.button.attrs(() => ({
 `;
 
 const Lines = styled.div`
-  width: 80%;
+  width: 60%;
   position: absolute;
   background: ${(p) => (p.open ? 'transparent' : 'var(--color-text-main)')};
   height: 3px;
