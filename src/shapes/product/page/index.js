@@ -58,7 +58,7 @@ export default function ProductShape({ product, locale }) {
   const specifications = components.find(isSpecsComponent);
   const relatedProducts = components.find(isRelatedProductsComponent)?.content
     ?.items;
-
+  console.log();
   // At Crystallize you can create variants of the same product.
   // It could work for sizes, colors, textures, and so on.
   // Every time we create a Product, a default variant is created of that product
@@ -117,6 +117,7 @@ export default function ProductShape({ product, locale }) {
               product={product}
               selectedVariant={selectedVariant}
               pricing={pricing}
+              OutOfStock={selectedVariant.stockLocations[0].stock}
             />
             <Stock selectedVariant={selectedVariant} />
           </ActionsSticky>

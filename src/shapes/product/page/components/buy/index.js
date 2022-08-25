@@ -14,7 +14,12 @@ import {
   Percentage
 } from './styles';
 
-export default function BuyButton({ product, selectedVariant, pricing }) {
+export default function BuyButton({
+  product,
+  selectedVariant,
+  pricing,
+  OutOfStock
+}) {
   const [buying, setBuying] = useState(false);
   const basket = useBasket();
   const layout = useContext(LayoutContext);
@@ -85,9 +90,15 @@ export default function BuyButton({ product, selectedVariant, pricing }) {
           <strong>{textDefaultPrice}</strong>
         </Price>
       )}
-      <Button width="250px" onClick={buy} state={buying && 'loading'}>
-        {t('product:addToBasket')}
-      </Button>
+      {OutOfStock <= 0 ? (
+        <Button width="250px" state={buying && 'loading'} disabled>
+          Out of stock
+        </Button>
+      ) : (
+        <Button width="250px" onClick={buy} state={buying && 'loading'}>
+          {t('product:addToBasket')}
+        </Button>
+      )}
     </ProductFooter>
   );
 }
