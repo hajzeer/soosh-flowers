@@ -93,7 +93,7 @@ export const PaymentButton = styled.button`
   img {
     display: block;
     margin: 0 auto;
-    max-height: 25px;
+    max-height: 50px;
     max-width: 100px;
   }
 

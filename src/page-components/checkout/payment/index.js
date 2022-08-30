@@ -132,7 +132,7 @@ export default function Payment() {
   const paymentProviders = [
     {
       name: 'stripe',
-      color: '#6773E6',
+      color: '#a47454',
       logo: '/static/stripe-logo.png',
       render: () => (
         <PaymentProvider>
