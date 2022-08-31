@@ -92,8 +92,8 @@ export const PaymentButton = styled.button`
 
   img {
     display: block;
-    margin: 0 auto;
-    max-height: 50px;
+    margin: -10px auto;
+    max-height: 80px;
     max-width: 100px;
   }
 
@@ -118,7 +118,7 @@ export const PaymentSelector = styled.div`
   flex-wrap: wrap;
 
   ${responsive.mdPlus} {
-    flex-wrap: no-wrap;
+    flex-wrap: unset;
   }
 `;
 
