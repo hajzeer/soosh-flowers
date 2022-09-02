@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSettings } from 'components/settings-context';
-import IconUser from 'ui/icons/user';
-import styled from 'styled-components';
 import BurgerButton from './burger-button';
 import BasketButton from './basket-button';
-import LocaleSwitcher from './locale-switcher';
-import Search from './search';
+
 import {
   Outer,
   Nav,
@@ -24,7 +20,6 @@ import {
 } from './styles';
 
 export default function Header({ simple, preview }) {
-  const { mainNavigation } = useSettings();
   const router = useRouter();
 
   const [navOpen, setNavOpen] = useState(false);
@@ -48,7 +43,7 @@ export default function Header({ simple, preview }) {
         </Link>
         <Link href="/" passHref>
           <ImageDiv>
-            <Image src="/static/8.png" width={250} height={150} />
+            <Image src="/static/8.png" width={350} height={250} />
           </ImageDiv>
         </Link>
         <IconBar>

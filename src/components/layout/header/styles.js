@@ -37,8 +37,8 @@ export const BluredDiv = styled.div`
   padding: 0;
 `;
 export const ImageDiv = styled.div`
-  width: 150px;
-  height: 60px;
+  width: 200px;
+  height: 80px;
   object-fit: contain;
   display: flex;
   flex-direction: column;
@@ -242,7 +242,7 @@ export const BasketQuantity = styled.div`
   position: absolute;
   font-weight: 600;
   font-size: 11px;
-  top: 0px;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
