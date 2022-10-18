@@ -50,37 +50,37 @@ const ethicalPolicy = () => {
           <br /> <br />
           We may use your information to:
           <br /> <br />
-          + Process orders that you have submitted;
+          + Process orders that you have submitted.
           <br />
-          + Deal with entries into a competition;
+          + Deal with entries into a competition.
           <br />
           + To carry out our obligations arising from any contracts entered into
-          by you and us;
+          by you and us.
           <br />
-          + Seek your view or comments on the services and products we provide;
+          + Seek your view or comments on the services and products we provide.
           <br />
-          + Notify you of changes to our services;
+          + Notify you of changes to our services.
           <br />
           + Send you communications which you have requested and that may be of
           interest to you – these may include exclusive offers, news, surveys
           and events from SOOSH FLOWERS. This will be conducted upon your
-          documented consent;
+          documented consent.
           <br />
           + Measure or understand the effectiveness of advertising we serve to
           you and others, and to deliver relevant advertising to you, which may
-          be based on your activity on our website;
+          be based on your activity on our website.
           <br />
           + Make suggestions and recommendations to you and other users of our
           site about goods or services that may interest you or them, which may
           be based on your activity on our website;
           <br />
-          + Process a job application;
+          + Process a job application.
           <br />
-          + Personalise your use of the website;
+          + Personalise your use of the website.
           <br />
           + Administer our site and for internal business administration and
           operations, including troubleshooting, data analysis, testing,
-          research, statistical and survey purposes;
+          research, statistical and survey purposes.
           <br />
           + As part of our efforts to keep the site safe and secure.
           <br />
@@ -159,7 +159,7 @@ const ethicalPolicy = () => {
           <span>16 OR UNDER</span>
           <br /> <br />
           We are concerned to protect the privacy of children aged 16 or under.
-          If you are aged 16 or under‚ please ask your parent/guardian's
+          If you are aged 16 or under‚ please ask your parent/guardian`s
           permission beforehand whenever you provide us with personal
           information.
           <br /> <br />
