@@ -37,7 +37,7 @@ export const BluredDiv = styled.div`
   padding: 0;
 `;
 export const ImageDiv = styled.div`
-  width: 200px;
+  width: 164px;
   height: 80px;
   object-fit: contain;
   display: flex;

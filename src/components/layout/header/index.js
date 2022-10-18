@@ -38,7 +38,7 @@ export default function Header({ simple, preview }) {
         <BluredDiv />
         <Link href="/" passHref>
           <Logo aria-label="Logo">
-            <Image src="/static/31.png" alt="" width={80} height={160} />
+            <Image src="/static/31.png" alt="" width={80} height={164} />
           </Logo>
         </Link>
         <Link href="/" passHref>
