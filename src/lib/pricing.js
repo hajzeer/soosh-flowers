@@ -13,11 +13,17 @@ export default function getRelativePriceVariants({ variant, locale }) {
 
   const discountPercentage = (100 * discountPrice?.price) / defaultPrice?.price;
 
-  return {
-    defaultPrice,
-    discountPrice: discountPrice,
-    discountPercentage: isNaN(discountPercentage)
-      ? 0
-      : 100 - Math.round(discountPercentage)
-  };
+  if (discountPrice?.price == null || discountPrice?.price === 0) {
+    return {
+      defaultPrice
+    };
+  } else {
+    return {
+      defaultPrice,
+      discountPrice: discountPrice,
+      discountPercentage: isNaN(discountPercentage)
+        ? 0
+        : 100 - Math.round(discountPercentage)
+    };
+  }
 }
