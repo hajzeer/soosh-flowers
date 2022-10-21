@@ -81,6 +81,26 @@ const About = () => {
             heads and grasses with the possibly best way of preserving their
             natural look and form.
           </Paragraph>
+
+          <H3>PRODUCT CARE</H3>
+          <Paragraph>
+            All globes are crafted by hand, the flowers are either dried or
+            preserved but eternal, yours to enjoy for years and years!
+            <br />
+            ~ Please avoid direct sunlight otherwise the colours may fade
+            <br />
+            ~ Created for your convenience - glass protect the arrangement from
+            the dust
+            <br />~ Lift up the glass carefully and blow the excess of the
+            flower crumbs to enjoy plain tidy wooden base
+          </Paragraph>
+          <H3>SUSTAINABILITY</H3>
+          <Paragraph>
+            With the natural commitment to the sustainability, all pieces are
+            locally made and responsibly sourced. We are using only
+            environmentally friendly packaging, that securely deliver the parcel
+            to your home. You saved a tree - be proud!
+          </Paragraph>
         </TextDiv>
         <ImageDivFirst>
           <Img src="/static/about1.png" layout="fill" primary />

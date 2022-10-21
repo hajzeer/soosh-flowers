@@ -10,7 +10,7 @@ const Description = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-size: 50px;
+  font-size: 40px;
   color: var(--color-text-main);
   max-width: var(--font-max-width);
   margin-bottom: 15px;

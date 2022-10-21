@@ -107,8 +107,8 @@ export const TitlePosition = styled.div`
   top: -20px;
 `;
 export const H1 = styled.h1`
-  font-size: 45px;
-  margin: 0 30px;
+  font-size: 35px;
+  margin: 0 25px;
   color: var(--color-text-main);
   max-width: var(--font-max-width);
   font-weight: 800;
@@ -122,7 +122,7 @@ export const H2 = styled.h2`
   color: var(--color-text-main);
   max-width: var(--font-max-width);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: 1024px) {
     padding: 50px;

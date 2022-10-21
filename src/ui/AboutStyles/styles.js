@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const H1 = styled.h1`
   font-size: 45px;
-  margin: 0 30px;
+  margin: 0 20px;
   color: var(--color-text-main);
   max-width: var(--font-max-width);
   font-weight: 800;
@@ -20,7 +20,7 @@ export const H1 = styled.h1`
 
   @media (min-width: 1024px) {
     font-size: 60px;
-    margin: 0 50px 40px;
+    margin: 0 50px 0;
   }
 `;
 
@@ -29,6 +29,7 @@ export const H3 = styled.h3`
   font-size: 30px;
   line-height: 1.2;
   padding: 20px;
+  margin-bottom: 0;
   color: var(--color-text-sub);
   max-width: var(--font-max-width);
   text-transform: uppercase;
@@ -157,7 +158,6 @@ export const SecondDiv = styled.div`
 export const ImageGridCollectionInner = styled.div`
   position: relative;
   width: 100%;
-
   transition: all 0.3s ease-out;
 
   &:hover {
@@ -168,7 +168,6 @@ export const ImageGridCollectionInner = styled.div`
 export const ImageGridCollection = styled.div`
   margin: 10px;
   width: auto;
-  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -183,47 +182,57 @@ export const ImageGridCollection = styled.div`
   ${ImageGridCollectionInner}:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    height: 310px;
+    height: 250px;
+
     @media (min-width: 1024px) {
-      height: 835px;
+      height: 450px;
     }
   }
   ${ImageGridCollectionInner}:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    height: 150px;
     @media (min-width: 1024px) {
-      height: 400px;
+      height: 300px;
     }
   }
   ${ImageGridCollectionInner}:nth-child(3) {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
+    height: 250px;
+
     @media (min-width: 1024px) {
-      height: 835px;
+      height: 450px;
     }
   }
   ${ImageGridCollectionInner}:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: -1 / -2;
-    height: 150px;
+    position: relative;
+
     @media (min-width: 1024px) {
-      height: 400px;
+      height: 300px;
+
+      top: -180px;
     }
   }
   ${ImageGridCollectionInner}:nth-child(5) {
     grid-column: 2 / 3;
     grid-row: -1 / -3;
+    height: 250px;
+
     @media (min-width: 1024px) {
-      height: 835px;
+      height: 450px;
     }
   }
   ${ImageGridCollectionInner}:nth-child(6) {
     grid-column: 3 / 4;
     grid-row: -1 / -2;
-    height: 150px;
+    position: relative;
+
     @media (min-width: 1024px) {
-      height: 400px;
+      height: 300px;
+
+      top: -180px;
     }
   }
 `;

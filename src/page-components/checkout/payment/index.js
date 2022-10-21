@@ -247,20 +247,6 @@ export default function Payment() {
                 required
               />
             </InputGroup>
-            <InputGroup>
-              <Label htmlFor="address_line2">
-                {t('customer: address line 2')}
-              </Label>
-              <Input
-                name="address_line2"
-                type="text"
-                value={address_line2}
-                onChange={(e) =>
-                  setState({ ...state, address_line2: e.target.value })
-                }
-                required
-              />
-            </InputGroup>
           </Row>
           <Row>
             <InputGroup>
@@ -294,6 +280,25 @@ export default function Payment() {
                 type="text"
                 value={phone}
                 onChange={(e) => setState({ ...state, phone: e.target.value })}
+                required
+              />
+            </InputGroup>
+          </Row>
+          <br />
+          <br />
+          <Row>
+            <InputGroup>
+              <Label htmlFor="address_line2">
+                Give a three your favourite colours which you would like to add
+                to your personalization :)
+              </Label>
+              <Input
+                name="address_line2"
+                type="text"
+                value={address_line2}
+                onChange={(e) =>
+                  setState({ ...state, address_line2: e.target.value })
+                }
                 required
               />
             </InputGroup>

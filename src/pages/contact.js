@@ -1,6 +1,6 @@
 import Layout from '../components/layout';
-import { Anchor, Container, IFrame } from '../ui/ContactPage/styles';
-import { H3, ImageDivFirst, Img, Paragraph } from '../ui/AboutStyles/styles';
+import { Anchor, Container, IFrame, Paragraph } from '../ui/ContactPage/styles';
+import { H3 } from '../ui/AboutStyles/styles';
 import Link from 'next/link';
 
 const Contact = () => {
@@ -16,12 +16,25 @@ const Contact = () => {
         <div>
           <H3>CONTACT</H3>
           <Paragraph>
+            Would you like to surprise your loved ones? Choose your gift and the
+            date of the delivery (in line with the production time frame) and we
+            will take care of the rest!
+            <br />
+            <br />
+            Do you have an idea for the individual project or bulk order for
+            your special event? We look forward to hearing from you!
+            <br />
+            <br />
             For all customer and sales inquiries, please contact:
           </Paragraph>
           <Paragraph>Customer service:</Paragraph>
-          <Link href="mailto:hello@sooshflowers.com">
-            <Anchor>hello@sooshflowers.com</Anchor>
-          </Link>
+          <Anchor href="mailto:hello@sooshflowers.com">
+            hello@sooshflowers.com
+          </Anchor>
+          <Paragraph>Standalone location:</Paragraph>
+          <Anchor href="https://g.page/TheOldCinema?share" target="_blank">
+            The Old Cinema <br /> 160 Chiswick High Road London W4 1PR
+          </Anchor>
         </div>
         <div>
           <IFrame

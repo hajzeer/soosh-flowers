@@ -47,10 +47,7 @@ const BillingDetails = ({ order }) => {
         </p>
         <p>{t('address')}: </p>
         <p>
-          {t('street')}:{' '}
-          <strong>
-            {street}, {street2}
-          </strong>
+          {t('street')}: <strong>{street},</strong>
         </p>
         <p>
           {t('city and postal code')}:{' '}
@@ -60,6 +57,9 @@ const BillingDetails = ({ order }) => {
         </p>
         <p>
           {t('country')}: <strong>{country}</strong>
+        </p>
+        <p>
+          selected colours: <strong>{street2}</strong>
         </p>
       </Inner>
     </Outer>
