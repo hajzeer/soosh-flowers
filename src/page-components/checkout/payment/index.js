@@ -26,7 +26,7 @@ import {
 import Voucher from '../voucher';
 
 const StripeCheckout = dynamic(() => import('./stripe'));
-
+const PaypalCheckout = dynamic(() => import('./paypal'));
 const Row = styled.div`
   display: flex;
   margin-bottom: 10px;
@@ -52,13 +52,15 @@ export default function Payment() {
     dialingCode: ''
   });
   countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
-  countries.registerLocale(require('i18n-iso-countries/langs/pl.json'));
   const paymentConfig = useQuery('paymentConfig', () =>
     ServiceApi({
       query: `
       {
         paymentProviders {
           stripe {
+            enabled
+          }
+          paypal {
             enabled
           }
         }
@@ -150,6 +152,28 @@ export default function Payment() {
           />
         </PaymentProvider>
       )
+    },
+    {
+      name: 'paypal',
+      color: '#fff',
+      logo: '/static/paypal-logo.png',
+      render: () => (
+        <PaymentProvider>
+          <PaypalCheckout
+            checkoutModel={checkoutModel}
+            basketActions={actions}
+            onSuccess={(crystallizeOrderId) => {
+              router.push(
+                checkoutModel.confirmationURL.replace(
+                  '{crystallizeOrderId}',
+                  crystallizeOrderId
+                )
+              );
+              scrollTo(0, 0);
+            }}
+          />
+        </PaymentProvider>
+      )
     }
   ];
 
@@ -158,6 +182,9 @@ export default function Payment() {
     const { paymentProviders } = paymentConfig.data.data;
     if (paymentProviders.stripe.enabled) {
       enabledPaymentProviders.push('stripe');
+    }
+    if (paymentProviders.paypal.enabled) {
+      enabledPaymentProviders.push('paypal');
     }
   }
   return (
