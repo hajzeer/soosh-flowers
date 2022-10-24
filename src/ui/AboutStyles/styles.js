@@ -114,7 +114,7 @@ export const MainTextInfo = styled.div`
   @media (min-width: 1024px) {
     position: relative;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
   }
 `;
