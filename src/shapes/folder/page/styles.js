@@ -23,7 +23,7 @@ export const List = styled.div`
   grid-auto-rows: minmax(250px, auto);
 
   ${responsive.smPlus} {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: minmax(300px, auto);
   }
 `;

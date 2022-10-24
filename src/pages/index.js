@@ -130,13 +130,11 @@ const Home = (data) => {
           <ImageStripe />
         </TextDiv>
         <ItemsDiv>
-          <List>
-            {stacks?.map((stack, i) => (
-              <Item key={i}>
-                <Listformat item={stack} />
-              </Item>
-            ))}
-          </List>
+          {stacks?.map((stack, i) => (
+            <Item key={i}>
+              <Listformat item={stack} />
+            </Item>
+          ))}
         </ItemsDiv>
         <BgImageDiv>
           <HelperDiv>

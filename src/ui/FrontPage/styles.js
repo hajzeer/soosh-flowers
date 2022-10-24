@@ -243,9 +243,8 @@ export const ItemsDiv = styled.div`
   overflow-y: hidden;
   overflow-x: auto;
   cursor: grab;
-
+  gap: 15px;
   @media (min-width: 1024px) {
-    position: relative;
   }
 `;
 
