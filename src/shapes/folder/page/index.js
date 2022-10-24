@@ -81,7 +81,6 @@ export default function FolderPage({ folder, hideHeader }) {
             )}
           />
         ))}
-      git
       <Stackable stacks={stacks} />
       <List>
         {children
