@@ -66,7 +66,6 @@ const Home = (data) => {
     (c) => c.name === 'Stackable content'
   )?.content?.items;
 
-  console.log(stacks);
   return (
     <Layout
       title="SOOSHFLOWERS | Handmade from our UK flowers"
