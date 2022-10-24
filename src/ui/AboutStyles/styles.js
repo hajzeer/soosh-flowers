@@ -104,7 +104,6 @@ export const TextDiv = styled.div`
   }
 
   @media (min-width: 1600px) {
-    height: 500px;
   }
 `;
 
@@ -127,11 +126,9 @@ export const FirstDiv = styled.div`
   display: flex;
 
   @media (min-width: 1024px) {
-    width: 45%;
-    padding: 0 30px 30px 30px;
-    margin-left: 60px;
     position: relative;
-    left: 7%;
+    left: 10%;
+    width: 50%;
   }
 
   @media (min-width: 1600px) {
