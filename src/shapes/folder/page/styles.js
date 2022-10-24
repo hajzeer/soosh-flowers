@@ -3,7 +3,7 @@ import { responsive, Outer as O } from 'ui';
 
 export const H1 = styled.h1``;
 export const Outer = styled(O)`
-  min-height: initial;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -36,14 +36,14 @@ export const ImageStripe = styled.div`
   margin-bottom: 20px;
 
   @media (min-width: 1024px) {
-    width: 50%;
+    width: 75%;
     left: 0%;
   }
 `;
 
 export const SubNavigation = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   padding-bottom: 20px;
   width: 100%;
   justify-content: center;
@@ -55,9 +55,8 @@ export const SubNavigation = styled.div`
   }
 
   @media (min-width: 1024px) {
-    position: relative;
-    left: 5%;
     justify-content: flex-start;
+    flex-direction: row;
   }
 `;
 

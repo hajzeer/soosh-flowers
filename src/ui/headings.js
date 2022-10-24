@@ -26,6 +26,7 @@ export const H3 = styled.h3`
   color: var(--color-text-main);
   font-size: 1.4rem;
   margin: 1rem 0;
+  text-align: center;
 
   ${responsive.smAndLess} {
     font-size: 1.2rem;

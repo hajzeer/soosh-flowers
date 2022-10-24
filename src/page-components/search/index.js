@@ -147,7 +147,6 @@ export default function SearchPage(props) {
       <Layout title="Searching...">
         <Outer>
           <ListOuter>
-            <OrderBy orderBy={spec.orderBy} onChange={handleOrderByChange} />
             <Facets spec={spec} changeQuery={changeQuery} />
           </ListOuter>
         </Outer>

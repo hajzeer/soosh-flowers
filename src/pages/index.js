@@ -163,21 +163,21 @@ const Home = () => {
           </Paragraph>
           <ImageStripe />
         </TextDiv>
-        <ItemsDiv>
-          {isLoading ? (
-            isData.children.map((product) => {
-              return (
-                <Link href={product.path} passHref key={product.id}>
-                  <a>
-                    <ProductItem items={product} />
-                  </a>
-                </Link>
-              );
-            })
-          ) : (
-            <p>loading</p>
-          )}
-        </ItemsDiv>
+        {/*<ItemsDiv>*/}
+        {/*  {isLoading ? (*/}
+        {/*    isData.children.map((product) => {*/}
+        {/*      return (*/}
+        {/*        <Link href={product.path} passHref key={product.id}>*/}
+        {/*          <a>*/}
+        {/*            <ProductItem items={product} />*/}
+        {/*          </a>*/}
+        {/*        </Link>*/}
+        {/*      );*/}
+        {/*    })*/}
+        {/*  ) : (*/}
+        {/*    <p>loading</p>*/}
+        {/*  )}*/}
+        {/*</ItemsDiv>*/}
         <BgImageDiv>
           <HelperDiv>
             <Image

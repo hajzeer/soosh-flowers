@@ -4,13 +4,13 @@ export const Text = styled.div`
   z-index: 2;
   bottom: 0;
   left: 0;
-  width: 100%;
 
   h3 {
     text-align: center;
     font-size: 1.5em;
     font-weight: 600;
     color: inherit;
+    width: 300px;
   }
 
   @media (min-width: 1024px) {
@@ -27,7 +27,7 @@ export const Outer = styled.a`
   display: flex;
   align-items: center;
   background: transparent;
-  padding: 20px 20px;
+  padding: 0;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border-top: none;
   border-bottom: none;
