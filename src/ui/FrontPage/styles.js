@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { responsive } from '../responsive';
 
 export const Container = styled.div`
   overflow: hidden;
@@ -113,6 +114,20 @@ export const H1 = styled.h1`
   max-width: var(--font-max-width);
   font-weight: 800;
   letter-spacing: 5px;
+`;
+export const List = styled.div`
+  padding: 20px;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  // In case of not loading the media, "grid-auto-rows" will create enough space
+  // in order to display the item correctly with the alternative text
+  grid-auto-rows: minmax(250px, auto);
+
+  ${responsive.smPlus} {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(300px, auto);
+  }
 `;
 
 export const H2 = styled.h2`

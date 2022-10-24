@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getData } from 'page-components/folder';
 import { getLocaleFromContext } from 'lib/app-config';
@@ -26,14 +26,17 @@ import {
   MainInfoDiv,
   FirstDiv,
   SecondDiv,
-  TextDiv
+  TextDiv,
+  List
 } from '../ui/FrontPage/styles.js';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProductItem from '../components/indexProductItems/ProductItems';
 import { simplyFetchFromGraph } from '../lib/graph';
+import Listformat from '../components/listformat';
+import { Item } from '../shapes/folder/page/styles';
 
-const Home = () => {
+const Home = (data) => {
   const [isData, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef(null);
@@ -57,49 +60,13 @@ const Home = () => {
 
     inputRef.current.value = '';
   };
+  console.log(data.folder);
 
-  const fetchingData = async () => {
-    const apiUrlBase = `https://api.crystallize.com/${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER}`;
+  const stacks = data.folder.components?.find(
+    (c) => c.name === 'Stackable content'
+  )?.content?.items;
 
-    const data = await simplyFetchFromGraph({
-      uri: `${apiUrlBase}/catalogue`,
-      query: `        query GetProduct {
-  catalogue(language: "en", path: "/shop/ready-to-get") {
-    id
-    name
-    type
-    path
-    children {
-               ...on Product {
-          variants{
-            name
-          images{
-              url
-            }
-            priceVariants{
-              price
-              currency
-              identifier
-            }
-          }
-        }
-      id
-      name, 
-      path, 
-      type
- 
-       
-      }
-      }
-      }`
-    });
-    setData(data.data.catalogue);
-    setIsLoading(true);
-  };
-
-  useEffect(() => {
-    fetchingData();
-  }, []);
+  console.log(stacks);
   return (
     <Layout
       title="SOOSHFLOWERS | Handmade from our UK flowers"
@@ -163,21 +130,15 @@ const Home = () => {
           </Paragraph>
           <ImageStripe />
         </TextDiv>
-        {/*<ItemsDiv>*/}
-        {/*  {isLoading ? (*/}
-        {/*    isData.children.map((product) => {*/}
-        {/*      return (*/}
-        {/*        <Link href={product.path} passHref key={product.id}>*/}
-        {/*          <a>*/}
-        {/*            <ProductItem items={product} />*/}
-        {/*          </a>*/}
-        {/*        </Link>*/}
-        {/*      );*/}
-        {/*    })*/}
-        {/*  ) : (*/}
-        {/*    <p>loading</p>*/}
-        {/*  )}*/}
-        {/*</ItemsDiv>*/}
+        <ItemsDiv>
+          <List>
+            {stacks?.map((stack, i) => (
+              <Item key={i}>
+                <Listformat item={stack} />
+              </Item>
+            ))}
+          </List>
+        </ItemsDiv>
         <BgImageDiv>
           <HelperDiv>
             <Image

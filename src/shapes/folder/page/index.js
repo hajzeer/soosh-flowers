@@ -81,13 +81,21 @@ export default function FolderPage({ folder, hideHeader }) {
             )}
           />
         ))}
-      <Stackable stacks={stacks} />
       <List>
         {children
           ?.filter((c) => !isFolderType(c))
           ?.map((item, i) => (
             <Item className={`item-${item?.type}`} key={i}>
               <Listformat item={item} />
+            </Item>
+          ))}
+      </List>
+      <List>
+        {stacks
+          ?.filter((c) => !isFolderType(c))
+          ?.map((stack, i) => (
+            <Item className={`item-${stack?.type}`} key={i}>
+              <Listformat item={stack} />
             </Item>
           ))}
       </List>
