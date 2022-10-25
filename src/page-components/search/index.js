@@ -174,17 +174,10 @@ export default function SearchPage(props) {
         <Stackable stacks={stacks} />
         <ListOuter>
           <SearchActions>
-            <Facets
-              aggregations={data.aggregations}
-              spec={spec}
-              changeQuery={changeQuery}
-              totalResults={totalResults}
-            />
             <LocateRight>
               <OrderBy orderBy={spec.orderBy} onChange={handleOrderByChange} />
             </LocateRight>
           </SearchActions>
-          <SearchCount count={totalResults} />
           <Results {...data.search} spec={spec} navigate={navigate} />
         </ListOuter>
       </Outer>
