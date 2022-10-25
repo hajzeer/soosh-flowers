@@ -16,7 +16,9 @@ export default function Footer() {
     <Outer>
       <HelperDiv>
         <Paragraph>©{new Date().getFullYear()} SOOSH FLOWERS STORE</Paragraph>
-        <Paragraph>Design by Breath Design Studio</Paragraph>
+        <a href="https://www.instagram.com/breath.d.s/">
+          <Paragraph>Design by Breath Design Studio</Paragraph>
+        </a>
       </HelperDiv>
       <NavList>
         <Link href="/delivery-returns" passHref>

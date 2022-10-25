@@ -16,6 +16,7 @@ export const Outer = styled(O)`
 export const List = styled.div`
   padding: 20px;
   display: grid;
+  grid-gap: 20px;
   position: relative;
   grid-template-columns: 1fr;
   // In case of not loading the media, "grid-auto-rows" will create enough space

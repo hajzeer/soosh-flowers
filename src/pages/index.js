@@ -60,7 +60,6 @@ const Home = (data) => {
 
     inputRef.current.value = '';
   };
-  console.log(data.folder);
 
   const stacks = data.folder.components?.find(
     (c) => c.name === 'Stackable content'
